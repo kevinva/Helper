@@ -1,12 +1,25 @@
 //
-//  HzConcurrencyHelper.swift
-//  TaoLueFM
+//  HzMeasure.swift
+//  HzFunctionMeasure
 //
-//  Created by ZanderHo on 16/3/3.
+//  Created by ZanderHo on 16/2/25.
 //  Copyright © 2016年 ZanderHo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+/**
+ 测量函数运行时间
+ 
+ - parameter f: 函数
+ */
+func measure(f: () -> ()) {
+    let start = CACurrentMediaTime()
+    f()
+    let end = CACurrentMediaTime()
+    
+    print("函数执行时间：\(end - start)")
+}
 
 /**
  在主线程上延迟运行一项任务
